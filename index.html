@@ -85,21 +85,21 @@
 
     function getEnvironment() {
       document.getElementById("os").append(liff.getOS())
-      document.getElementById("language").append(lift.getLanguage())
-      document.getElementById("version").append(lift.getVersion())
-      document.getElementById("accessToken").append(lift.getAccessToken())
-      document.getElementById("isInClient").append(lift.isInClient())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
     }
 
     async function main() {
       
       await liff.init({ liffId: "2001362093-0qY6xqp6" })
-      liff.ready.then(() => {
-        getUserProfile()
-      });
+      //liff.ready.then(() => {
+      //  getUserProfile()
+      //});
 
-      // getEnvironment();
-     //  getUserProfile()
+       getEnvironment();
+       getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
