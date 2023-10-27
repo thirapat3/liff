@@ -43,7 +43,7 @@
   </script> -->
 
   <!--<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -76,12 +76,11 @@
     }
 
     function getEnvironment() {
-      
+      document.getElementById("os").append(liff.getOS())
       document.getElementById("language").append(lift.getLanguage())
       document.getElementById("version").append(lift.getVersion())
       document.getElementById("accessToken").append(lift.getAccessToken())
       document.getElementById("isInClient").append(lift.isInClient())
-     
     }
 
     async function main() {
