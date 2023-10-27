@@ -73,7 +73,7 @@
     }
 
     async function getUserProfile() {
-
+      
       const profile = await liff.getProfile()
 
       document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -94,8 +94,12 @@
     async function main() {
       
       await liff.init({ liffId: "2001362093-0qY6xqp6" })
-       getEnvironment();
-       getUserProfile()
+      liff.ready.then(() => {
+        getUserProfile()
+      });
+
+      // getEnvironment();
+     //  getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
