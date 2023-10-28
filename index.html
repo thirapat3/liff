@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <p id="userId"><b>userId:</b> </p>
-  <!-- 
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -37,8 +35,6 @@
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
-
-  -->
 
   <!-- <script src="js/vconsole.min.js"></script> -->
   <!-- <script>
@@ -80,21 +76,19 @@
       
       const profile = await liff.getProfile()
 
-     // document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
-     // document.getElementById("statusMessage").append(profile.statusMessage)
-      //document.getElementById("displayName").append(profile.displayName)
-      alert("ttt"+profile.userId)
-      
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("displayName").append(profile.displayName)
 
     }
 
     function getEnvironment() {
-     // document.getElementById("os").append(liff.getOS())
-     // document.getElementById("language").append(liff.getLanguage())
-     // document.getElementById("version").append(liff.getVersion())
-     // document.getElementById("accessToken").append(liff.getAccessToken())
-     // document.getElementById("isInClient").append(liff.isInClient())
+      document.getElementById("os").append(liff.getOS())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
     }
 
     async function main() {
@@ -104,8 +98,8 @@
       //  getUserProfile()
       //});
 
-      // getEnvironment();
-        getUserProfile()
+       getEnvironment();
+       getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
