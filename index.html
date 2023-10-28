@@ -29,12 +29,6 @@
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
-  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-  <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
-  <button onclick="openWindow()">Open Window</button>
-  <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
-  <button id="btnLogOut" onclick="logOut()">Log Out</button>
-  <button id="btnClose" onclick="closed()">Close</button>
 
   <!-- <script src="js/vconsole.min.js"></script> -->
   <!-- <script>
@@ -80,6 +74,11 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
+      
+     // xhttp.open("GET", "http://localhost:8090/jdj/LineUserID.jsp?userId=12345");
+     // const res = await fetch('http://localhost:8080/jdj/LineUserID.jsp?userId=thirapat')
+      //document.getElementById("userId").append("12345")
+      const res = await fetch('http://jordeejing.ddns.net/:8090/jdj/LineUserID.jsp?userId=thirapat')
 
     }
 
@@ -98,7 +97,7 @@
       //  getUserProfile()
       //});
 
-       getEnvironment();
+     //  getEnvironment();
        getUserProfile()
       // getContext()
       // getFriendship()
