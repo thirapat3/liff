@@ -89,8 +89,13 @@
 
       try{
          // const res = await fetch("https://a36a-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
-          //const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
-          const res = await fetch("https://49.0.88.3:8100/jdj/Servlet_Coupon_Api?userId="+userId)  
+         // const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
+         // const res = await fetch("https://49.0.88.3:8100/jdj/Servlet_Coupon_Api?userId="+userId)  
+
+        //  const res = await fetch('http://localhost:8080/jdj/Servlet_Api_Coupon?userId=thirapat')
+          const res = await fetch("https://49.0.88.3:8100/jdj/Servlet_Api_Coupon?userId="+userId)  
+
+
         if (!res.ok) {
           console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
         }
