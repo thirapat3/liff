@@ -69,20 +69,20 @@
       
       const profile = await liff.getProfile()
 
-   //   document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("pictureUrl").src = profile.pictureUrl
      // document.getElementById("pictureUrl").height = "300";
      // document.getElementById("pictureUrl").width = "300";
-    //  document.getElementById("lineUserId").append(profile.userId)
+      document.getElementById("lineUserId").append(profile.userId)
       //document.getElementById("statusMessage").append(profile.statusMessage)
      // document.getElementById("displayName").append(profile.displayName)
       
      
      //  window.location = 'https://3878-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId=thirapat';
       var userId = profile.userId
-    window.location = 'https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId='+userId;
+  //  window.location = 'https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId='+userId;
       try{
-        //  const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
-        const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId=U0b23d540d5a7fd431a6e0792d638fb3c") 
+          const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
+      //  const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId=U0b23d540d5a7fd431a6e0792d638fb3c") 
           //const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
         if (!res.ok) {
           console.error('เกิดข้อผิดพลาดในการร้องขอ 1:', res.status, res.statusText);
@@ -96,8 +96,8 @@
             document.getElementById("userId").append(data[0].cus_ID);
             document.getElementById("cusName").append(data[0].cus_Name);
             document.getElementById("cusPhone").append(data[0].cus_Phone);
-          //  document.getElementById("displayName").append(data[0].cus_Point);
-           document.getElementById("displayName").textContent = JSON.stringify(data, null, 2);
+            document.getElementById("displayName").append(data[0].cus_Point);
+         //  document.getElementById("displayName").textContent = JSON.stringify(data, null, 2);
 
       } catch (error) {
         console.error('เกิดข้อผิดพลาดในการร้องขอ error:', error);
