@@ -13,7 +13,7 @@
   <p id="cusName"><b>ชื่อสมาชิก:</b> </p>
   <p id="cusPhone"><b>เบอร์โทรศัพท์:</b> </p>
   <p id="displayName"><b>คะแนนสะสม:</b> </p>
-  <p id="lineUserId"><b>userId:</b> </p>
+  <p id="lineUserId"><b>userId2:</b> </p>
   <!-- <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
   <p id="type"><b>type:</b> </p>
@@ -81,7 +81,7 @@
       var userId = profile.userId
 
       try{
-          const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Api_Coupon?userId="+userId)  
+          const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
           //const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
         if (!res.ok) {
           console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
