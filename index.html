@@ -67,7 +67,7 @@
 
     async function getUserProfile() {
       
-    //  const profile = await liff.getProfile()
+      const profile = await liff.getProfile()
 
    //   document.getElementById("pictureUrl").src = profile.pictureUrl
      // document.getElementById("pictureUrl").height = "300";
@@ -78,8 +78,8 @@
       
      
      //  window.location = 'https://3878-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId=thirapat';
-  //    var userId = profile.userId
-  //  window.location = 'https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId='+userId;
+      var userId = profile.userId
+    window.location = 'https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId='+userId;
       try{
         //  const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
         const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId=U0b23d540d5a7fd431a6e0792d638fb3c") 
@@ -118,7 +118,7 @@
 
     async function main() {
       
-   //   await liff.init({ liffId: "2001362093-0qY6xqp6" })
+      await liff.init({ liffId: "2001362093-0qY6xqp6" })
       //liff.ready.then(() => {
       //  getUserProfile()
       //});
