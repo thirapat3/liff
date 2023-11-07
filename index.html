@@ -1,30 +1,133 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div> tttttt </div>
-        
-        <script>
-          //  const res = await fetch("https://49.0.88.3:8100/jdj/Servlet_Api_Coupon?userId="+userId)     
-        
-        
-        async function main() {
-      
-            const res = await fetch("https://49.0.88.3:8100/jdj/Servlet_Coupon_Api")  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>จ.ดีจริง หมูสด</title>
+  <link rel="stylesheet" href="css/style.css" media="all">
+</head>
+<body>
+  
+  <img id="pictureUrl" >
+  <p id="userId"><b>รหัสสมาชิก:</b> </p>
+  <p id="cusName"><b>ชื่อสมาชิก:</b> </p>
+  <p id="cusPhone"><b>เบอร์โทรศัพท์:</b> </p>
+  <p id="displayName"><b>คะแนนสะสม:</b> </p>
+  <!-- <p id="statusMessage"><b>statusMessage:</b> </p>
+  <p id="decodedIDToken"><b>email:</b> </p>
+  <p id="type"><b>type:</b> </p>
+  <p id="viewType"><b>viewType:</b> </p>
+  <p id="utouId"><b>utouId:</b> </p>
+  <p id="roomId"><b>roomId:</b> </p>
+  <p id="groupId"><b>groupId:</b> </p>
+  <p id="friendship"><b>isFriendship:</b> </p>
+  <p id="scanCode"><b>Code:</b> </p>
+  <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
+  <p id="universalLink1"><b>Universal Link:</b> </p>
+  <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
+   -->
 
+
+  <!-- <script src="js/vconsole.min.js"></script> -->
+  <!-- <script>
+    var vConsole = new VConsole()
+    console.log("Hello World!")
+  </script> -->
+
+  <!--<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    function createUniversalLink() {
+    }
+
+    async function shareMsg() {
+    }
+
+    function logOut() {
+    }
+
+    function closed() {
+    }
+
+    async function scanCode() {
+    }
+
+    function openWindow() {
+    }
+
+    async function getFriendship() {
+    }
+
+    async function sendMsg() {
+    }
+
+    function getContext() {
+    }
+
+    async function getUserProfile() {
+      
+      const profile = await liff.getProfile()
+
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+     // document.getElementById("pictureUrl").height = "300";
+     // document.getElementById("pictureUrl").width = "300";
+      //document.getElementById("userId").append(profile.userId)
+      //document.getElementById("statusMessage").append(profile.statusMessage)
+     // document.getElementById("displayName").append(profile.displayName)
+      
+     
+     //  window.location = 'https://3878-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId=thirapat';
+      var userId = profile.userId
+
+      try{
+          const res = await fetch("https://cdc4-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
+          //const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
+        if (!res.ok) {
+          console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
         }
-        
-        main()
-        
-        </script>
-    </body>
+
+           const data = await res.json();
+           console.log('ข้อมูลที่ได้:', data);
+          
+          // const myObj = JSON.parse(data);
+           
+            document.getElementById("userId").append(data[0].cus_ID);
+            document.getElementById("cusName").append(data[0].cus_Name);
+            document.getElementById("cusPhone").append(data[0].cus_Phone);
+            document.getElementById("displayName").append(data[0].cus_Point);
+          // document.getElementById("displayName").textContent = JSON.stringify(data, null, 2);
+
+      } catch (error) {
+        console.error('เกิดข้อผิดพลาดในการร้องขอ error:', error);
+      }
+
+
+
+
+    }
+
+    function getEnvironment() {
+      document.getElementById("os").append(liff.getOS())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
+    }
+
+    async function main() {
+      
+      await liff.init({ liffId: "2001362093-0qY6xqp6" })
+      //liff.ready.then(() => {
+      //  getUserProfile()
+      //});
+
+     //  getEnvironment();
+       getUserProfile()
+      // getContext()
+      // getFriendship()
+      // createUniversalLink()
+    }
+    main()
+  </script>
+</body>
 </html>
