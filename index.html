@@ -91,6 +91,9 @@
           console.log('ไม่ได้');
         }else{
            console.log('ได้');
+            const responseType = typeof res;
+            console.log("Response type:", responseType);
+          
           const data = await res.json();
           console.log('ข้อมูลที่ได้:', data);
         }
