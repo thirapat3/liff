@@ -87,7 +87,11 @@
         if (!res.ok) {
           console.error('เกิดข้อผิดพลาดในการร้องขอ 1:', res.status, res.statusText);
         }
-
+        if(res===null){
+          console.log('ไม่ได้');
+        }else{
+          console.log('ข้อมูลที่ได้:', data);
+        }
        //    const data = await res.json();
          //  console.log('ข้อมูลที่ได้:', data);
           
