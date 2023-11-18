@@ -63,12 +63,7 @@
         if (!res.ok) {
           console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
         }
-
-         if (!res.ok) {
-                        console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
-                    }
-
-                        
+         
                         const data = await res.json();
             
                         if(data==null)  {
