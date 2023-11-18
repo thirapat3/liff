@@ -56,6 +56,7 @@
       var userId = 'U0b23d540d5a7fd431a6e0792d638fb3c'
 
       try{
+        //  const res = await fetch("https://2a89-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
           const res = await fetch("https://2a89-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
           //  const res = await fetch("https://49.0.88.3:8100/jdj/Servlet_Coupon_Api?userId="+userId)  
           //const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
@@ -63,15 +64,39 @@
           console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
         }
 
-           const data = await res.json();
-           console.log('ข้อมูลที่ได้:', data);
+         if (!res.ok) {
+                        console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
+                    }
+
+                        
+                        const data = await res.json();
+            
+                        if(data==null)  {
+                           
+                         
+                          window.location.href = "frm_register.jsp?userId="+userId;
+
+                         }else{
+                            console.log('ข้อมูลที่ได้:', data);
+
+                            
+                            window.location.href = "customer_detail.jsp?userId="+userId;
+                   
+                        } 
+
+
+
+
+        
+        //   const data = await res.json();
+        //   console.log('ข้อมูลที่ได้:', data);
           
           // const myObj = JSON.parse(data);
            
-            document.getElementById("userId").append(data[0].cus_ID);
-            document.getElementById("cusName").append(data[0].cus_Name);
-            document.getElementById("cusPhone").append(data[0].cus_Phone);
-            document.getElementById("displayName").append(data[0].cus_Point);
+         //   document.getElementById("userId").append(data[0].cus_ID);
+         //   document.getElementById("cusName").append(data[0].cus_Name);
+          //  document.getElementById("cusPhone").append(data[0].cus_Phone);
+           // document.getElementById("displayName").append(data[0].cus_Point);
           // document.getElementById("displayName").textContent = JSON.stringify(data, null, 2);
 
       } catch (error) {
