@@ -75,7 +75,10 @@
                          }else{
                             console.log('ข้อมูลที่ได้:', data);
               
-                            
+                            document.getElementById("userId").append(data.cus_ID);
+                      document.getElementById("cusName").append(data.cus_Nam);
+          //  document.getElementById("cusPhone").append(data[0].cus_Phone);
+           // document.getElementById("displayName").append(data[0].cus_Point);
                          //   window.location.href = "customer_detail.jsp?userId="+userId;
                    
                         } 
