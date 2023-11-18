@@ -37,38 +37,13 @@
   <!--<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
   <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-    function createUniversalLink() {
-    }
-
-    async function shareMsg() {
-    }
-
-    function logOut() {
-    }
-
-    function closed() {
-    }
-
-    async function scanCode() {
-    }
-
-    function openWindow() {
-    }
-
-    async function getFriendship() {
-    }
-
-    async function sendMsg() {
-    }
-
-    function getContext() {
-    }
+   
 
     async function getUserProfile() {
       
-      const profile = await liff.getProfile()
+     // const profile = await liff.getProfile()
 
-      document.getElementById("pictureUrl").src = profile.pictureUrl
+     // document.getElementById("pictureUrl").src = profile.pictureUrl
      // document.getElementById("pictureUrl").height = "300";
      // document.getElementById("pictureUrl").width = "300";
       //document.getElementById("userId").append(profile.userId)
@@ -77,10 +52,12 @@
       
      
      //  window.location = 'https://3878-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId=thirapat';
-      var userId = profile.userId
+     // var userId = profile.userId
+      var userId = 'U0b23d540d5a7fd431a6e0792d638fb3c'
 
       try{
-          const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
+        //  const res = await fetch("https://6016-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
+            const res = await fetch("http://49.0.88.3:8090/jdj/Servlet_Coupon_Api?userId="+userId)  
           //const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
         if (!res.ok) {
           console.error('เกิดข้อผิดพลาดในการร้องขอ:', res.status, res.statusText);
@@ -106,13 +83,7 @@
 
     }
 
-    function getEnvironment() {
-      document.getElementById("os").append(liff.getOS())
-      document.getElementById("language").append(liff.getLanguage())
-      document.getElementById("version").append(liff.getVersion())
-      document.getElementById("accessToken").append(liff.getAccessToken())
-      document.getElementById("isInClient").append(liff.isInClient())
-    }
+    f
 
     async function main() {
       
@@ -123,9 +94,7 @@
 
      //  getEnvironment();
        getUserProfile()
-      // getContext()
-      // getFriendship()
-      // createUniversalLink()
+     
     }
     main()
   </script>
