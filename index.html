@@ -6,11 +6,14 @@
         <title>จ.ดีจริง หมูสด</title>
     </head>
     <body>
+        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <script>
             async function main() {
-                 // await liff.init({ liffId: "2001362093-0qY6xqp6" })
-                  // getUserProfile()
-                var userId = 'U0b23d540d5a7fd431a6e0792d638fb3c'
+                await liff.init({ liffId: "2001362093-0qY6xqp6" })
+                const profile = await liff.getProfile()
+                var userId = profile.userId
+                  
+              //  var userId = 'U0b23d540d5a7fd431a6e0792d638fb3c'
                  window.location.href = "http://49.0.88.3:8090/liff/frm_register.jsp?userId="+userId;
      
             }
