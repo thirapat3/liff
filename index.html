@@ -8,12 +8,15 @@
     <body>
         <script>
             async function main() {
-              window.location.href = "http://49.0.88.3:8090/liff/";
-      
+                  await liff.init({ liffId: "2001362093-0qY6xqp6" })
+                   getUserProfile()
+     
             }
             main()
 
-          
+            async function getUserProfile() {
+                 window.location.href = "http://49.0.88.3:8090/liff/";
+            }        
         </script>  
     </body>
 </html>
