@@ -55,34 +55,34 @@
      // var userId = profile.userId
       var userId = 'U0b23d540d5a7fd431a6e0792d638fb3c'
 
-      try{
+   //   try{
         //  const res = await fetch("https://2a89-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
          // const res = await fetch("https://2a89-49-0-88-3.ngrok-free.app/jdj/Servlet_Coupon_Api?userId="+userId)  
          //    const res = await fetch("https://1269-49-0-88-3.ngrok-free.app/jdj/Servlet_Api_Coupon?userId="+userId)  
        //   const res = await fetch("https://49.0.88.3:8100/jdj/Servlet_Api_Coupon?userId="+userId)  
           //const res = await fetch('http://localhost:8080/jdj/Servlet_Coupon_Api?userId=thirapat')
-        if (!res.ok) {
-          console.error('เกิดข้อผิดพลาด:', res.status, res.statusText);
-        }
+     //   if (!res.ok) {
+       //   console.error('เกิดข้อผิดพลาด:', res.status, res.statusText);
+     //   }
          
-                        const data = await res.json();
+                   //     const data = await res.json();
             
-                        if(data==null)  {
+                  //      if(data==null)  {
                            
                          
                          // window.location.href = "frm_register.jsp?userId="+userId;
-                          console.log('bad')
+                      //    console.log('bad')
 
-                         }else{
-                            console.log('ข้อมูลที่ได้:', data);
+                    //     }else{
+                      //      console.log('ข้อมูลที่ได้:', data);
               
-                            document.getElementById("userId").append(data.cus_ID);
-                      document.getElementById("cusName").append(data.cus_Name);
+                      //      document.getElementById("userId").append(data.cus_ID);
+                  //    document.getElementById("cusName").append(data.cus_Name);
           //  document.getElementById("cusPhone").append(data[0].cus_Phone);
            // document.getElementById("displayName").append(data[0].cus_Point);
                          //   window.location.href = "customer_detail.jsp?userId="+userId;
                    
-                        } 
+                    //    } 
 
 
 
@@ -99,9 +99,9 @@
            // document.getElementById("displayName").append(data[0].cus_Point);
           // document.getElementById("displayName").textContent = JSON.stringify(data, null, 2);
 
-      } catch (error) {
-        console.error('เกิดข้อผิดพลาดในการร้องขอ error:', error);
-      }
+    //  } catch (error) {
+      //  console.error('เกิดข้อผิดพลาดในการร้องขอ error:', error);
+   //   }
 
 
 
