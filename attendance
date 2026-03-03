@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Attendance</title>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<style>
+body { font-family: sans-serif; text-align:center; padding:30px; }
+button { padding:15px 25px; font-size:18px; margin:10px; }
+#status { margin-top:20px; color:green; }
+</style>
+</head>
+<body>
+
+<h2>ระบบลงเวลา</h2>
+
+<button onclick="checkIn('IN')">ลงเวลาเข้า</button>
+<button onclick="checkIn('OUT')">ลงเวลาออก</button>
+
+<div id="status"></div>
+
+<script>
+
+const LIFF_ID = "2001362093-0qY6xqp6";
+const API_URL = "http://jordeejing.ddns.net:8090/lift/attendance"; // เปลี่ยนตามของคุณ
+
+async function init() {
+    await liff.init({ liffId: LIFF_ID });
+
+    if (!liff.isLoggedIn()) {
+        liff.login();
+    }
+}
+
+async function checkIn(type) {
+
+    document.getElementById("status").innerText = "กำลังดึงตำแหน่ง...";
+
+    try {
+
+        // ดึง GPS
+        navigator.geolocation.getCurrentPosition(async function(pos) {
+
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+
+            // ดึง ID Token (สำคัญ)
+            const idToken = liff.getIDToken();
+
+            const payload = {
+                idToken: idToken,
+                lat: lat,
+                lng: lng,
+                type: type,
+                timestamp: Date.now()
+            };
+
+            const response = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.text();
+
+            document.getElementById("status").innerText = result;
+
+        }, function(err){
+            alert("กรุณาเปิด GPS");
+        }, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        });
+
+    } catch (e) {
+        alert("เกิดข้อผิดพลาด");
+    }
+}
+
+init();
+
+</script>
+
+</body>
+</html>
